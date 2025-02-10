@@ -26,3 +26,12 @@ reverseList list = listAcc list []
   where
     listAcc [] revList = revList
     listAcc (x:xs) revList = listAcc xs revList ++ [x]
+
+isPalindrome :: Eq a => [a] -> Bool
+isPalindrome [] = True
+isPalindrome [x] = True
+isPalindrome (x:xs) =
+  if x == findLast xs then
+    isPalindrome (init xs)
+  else
+    False
