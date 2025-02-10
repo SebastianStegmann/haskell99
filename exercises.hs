@@ -20,3 +20,9 @@ countElements list = myElems list 0
   where
     myElems [] n = n
     myElems (_:xs) n = myElems xs (n + 1)
+
+reverseList :: [a] -> [a]
+reverseList list = listAcc list []
+  where
+    listAcc [] revList = revList
+    listAcc (x:xs) revList = listAcc xs revList ++ [x]
