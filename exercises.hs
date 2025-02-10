@@ -14,3 +14,9 @@ elementAt [] _  = error "Empty list"
 elementAt _ n | n < 0  = error "No number"
 elementAt (x:_) 0 = x
 elementAt (_:xs) n = elementAt xs (n - 1)
+
+countElements :: [a] -> Int
+countElements list = myElems list 0
+  where
+    myElems [] n = n
+    myElems (_:xs) n = myElems xs (n + 1)
