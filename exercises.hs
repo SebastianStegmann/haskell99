@@ -56,3 +56,6 @@ compress :: Eq a => [a] -> [a]
 compress = map head . group
 -- tail, previous head, if head != old head add to ouput
 
+-- 9
+packDoublicates :: Eq a => [a] -> [[a]]
+packDoublicates =  group
