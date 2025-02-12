@@ -1,5 +1,9 @@
 import Data.List (group)
 
+-- Based on this
+-- https://wiki.haskell.org/H-99:_Ninety-Nine_Haskell_Problems
+
+
 -- 1
 findLast :: [a] -> a
 findLast [] = error "No such thing"
@@ -59,3 +63,7 @@ compress = map head . group
 -- 9
 packDoublicates :: Eq a => [a] -> [[a]]
 packDoublicates =  group
+
+-- 10
+encode :: Eq a => [a] -> [(Int, a)] -- input ['a','a'] -> [(2, 'a')]
+encode = map (\grp -> (length grp, head grp)) . group
